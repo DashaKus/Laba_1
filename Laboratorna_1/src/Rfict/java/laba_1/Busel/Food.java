@@ -1,6 +1,6 @@
 package Rfict.java.laba_1.Busel;
 
-public abstract class Food implements Consumable,Nutritious,Comparator{
+public abstract class Food implements Consumable,Nutritious {
     protected String name=null;
     public Food(String name){ this.name=name;}
 

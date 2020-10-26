@@ -12,9 +12,5 @@ public class Cheese extends Food {
         return 400;
     };
 
-    @Override
-    public int compare(Food x, Food y, Food z) {
-        return 0;
-    }
 }
 

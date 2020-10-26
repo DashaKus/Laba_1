@@ -1,6 +1,6 @@
 package Rfict.java.laba_1.Busel;
 
-import java.sql.SQLOutput;
+import java.util.Arrays;
 
 public class Mainclass<args> {
     public static void main(String[] args) throws Exception{
@@ -10,7 +10,7 @@ public class Mainclass<args> {
         Food[] breakfast=new Food[20];
         int counter=0;
         int calories=0;
-
+        boolean caculate=false;
         for(String i:args)              //бурум значения с того странного окошка
         {
             String[] parts = i.split("/");
@@ -29,17 +29,18 @@ public class Mainclass<args> {
                 breakfast[counter]=new Potatoe(parts[1].toUpperCase());
                 breakfast[counter].consume();
             }
-            if(parts[0].equals("-calories")){calories =0;}
-            else calories=-1;
+            if(parts[0].equals("-calories")){caculate =true;}
             counter++;
         }
-        int counter_2 = 0;
-        if(calories==0)
+        Arrays.sort(breakfast,new FoodComparator());
+        if(caculate =true)
         {
-        for(String j:args) {
-            String[] parts_2 = j.split("/");
-            calories+= breakfast[counter_2].calculateCalories();
-            counter_2++;
+        for(Food j:breakfast) {
+            if(j!=null) {
+                calories += j.calculateCalories();
+                j.consume();
+            }
+            else break;
         }
          }
         System.out.println("aaaaaa");

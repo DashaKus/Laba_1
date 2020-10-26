@@ -27,16 +27,5 @@ public class Apple  extends Food {
         if (size.equals("big")) {return 65;}
         else return 0;
     }
-
-    public int compare(Apple args0,Apple args1,Apple args2) {
-        if (size.equals("small")) {return -1;}
-        if (size.equals("big")) {return 1;}
-        else return 0;
-    }
-
-    @Override
-    public int compare(Food x, Food y, Food z) {
-        return 0;
-    }
 }
 

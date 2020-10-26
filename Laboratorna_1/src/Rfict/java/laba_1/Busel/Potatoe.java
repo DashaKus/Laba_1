@@ -18,14 +18,5 @@ public class Potatoe extends Food {
     if(type.equals("fried")){return 100;}
     else return 0;
     }
-    public int compare(Potatoe arg1,Potatoe arg2, Potatoe arg3){
-    if(type.equals("boild")){return 1;}
-    if(type.equals("fried")){return -1;}
-    else return 0; }
-
-    @Override
-    public int compare(Food x, Food y, Food z) {
-        return 0;
-    }
 }
 
