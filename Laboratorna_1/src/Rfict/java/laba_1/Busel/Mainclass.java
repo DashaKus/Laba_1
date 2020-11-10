@@ -17,33 +17,33 @@ public class Mainclass<args> {
             if(parts[0].equals("Apple"))
             {
                 breakfast[counter]=new Apple(parts[1].toUpperCase());
-                breakfast[counter].consume();
+               // breakfast[counter].consume();
+
             }
             if(parts[0].equals("Cheese"))
             {
                 breakfast[counter]=new Cheese();
-                breakfast[counter].consume();
+               //breakfast[counter].consume();
             }
             if(parts[0].equals("Potatoe"))
             {
                 breakfast[counter]=new Potatoe(parts[1].toUpperCase());
-                breakfast[counter].consume();
+              //  breakfast[counter].consume();
             }
             if(parts[0].equals("-calories")){caculate =true;}
             counter++;
         }
+        System.out.println(caculate);
         Arrays.sort(breakfast,new FoodComparator());
-        if(caculate =true)
+        for(int i=0;i<20;i++)
         {
-        for(Food j:breakfast) {
-            if(j!=null) {
-                calories += j.calculateCalories();
-                j.consume();
+            if(breakfast[i]!=null) {
+                breakfast[i].consume();
+                if(caculate) {
+                    calories += breakfast[i].calculateCalories();
+                }
             }
-            else break;
         }
-         }
-        System.out.println("aaaaaa");
         System.out.println("Calories of breakfast is: " + calories);
 
     }
