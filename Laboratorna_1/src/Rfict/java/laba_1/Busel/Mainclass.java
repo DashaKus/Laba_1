@@ -10,6 +10,9 @@ public class Mainclass<args> {
         Food[] breakfast=new Food[20];
         int counter=0;
         int calories=0;
+        int apples=0;
+        int cheese =0;
+        int potatoe =0;
         boolean caculate=false;
         for(String i:args)              //бурум значения с того странного окошка
         {
@@ -17,17 +20,20 @@ public class Mainclass<args> {
             if(parts[0].equals("Apple"))
             {
                 breakfast[counter]=new Apple(parts[1].toUpperCase());
+                apples++;
                // breakfast[counter].consume();
 
             }
             if(parts[0].equals("Cheese"))
             {
                 breakfast[counter]=new Cheese();
-               //breakfast[counter].consume();
+                cheese++;
+                //breakfast[counter].consume();
             }
             if(parts[0].equals("Potatoe"))
             {
                 breakfast[counter]=new Potatoe(parts[1].toUpperCase());
+                potatoe++;
               //  breakfast[counter].consume();
             }
             if(parts[0].equals("-calories")){caculate =true;}
@@ -45,6 +51,8 @@ public class Mainclass<args> {
             }
         }
         System.out.println("Calories of breakfast is: " + calories);
-
+        System.out.println(apples+" Apples");
+        System.out.println(cheese+" Cheese");
+        System.out.println(potatoe+" Potatoes");
     }
 }
